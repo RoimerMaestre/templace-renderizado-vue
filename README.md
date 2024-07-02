@@ -1,3 +1,6 @@
+
+![alt](./public/Captura%20de%20pantalla%202024-07-02%20190239.png)
+
 # DESAFIO TEMPLATE-RENDERING
 
 ## Descripción
