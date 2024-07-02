@@ -18,46 +18,49 @@
       <input v-model="texto" type="text" id="input5" name="input5" maxlength="35" /><br /><br />
 
       <label>
-      
         Tipografía:
         <select id="input6" name="input6" v-model="tipoLetra">
-          <option v-for="fuente in fuentes" :key="fuente" :value="fuente">{{ fuente }}</option>
-        </select> 
+          <option v-for="fuente in fuentes" :key="fuente" :value="fuente">
+            {{ fuente }}
+          </option>
+        </select>
 
         <!-- <select id="input6" name="input6" v-model="tipoLetra">
           <option value="arial">Arial</option>
           <option value="cursiva">Cursiva</option>
           <option value="impact">impact</option>
           <option value="garamond">Garamond</option>
-        </select>  </label><br /><br /> -->
-      </label><br /><br />
+        </select>  </label><br /><br /> --> </label><br /><br />
 
       <label>
         Opacidad
-        <input type="checkbox" id="input7" name="input7" v-model="opacity"/> </label><br /><br />
+        <input type="checkbox" id="input7" name="input7" v-model="opacity" /> </label><br /><br />
 
       <label>
         Tamaño de letra
-        <input  v-model=" tamanoLetra" type="radio" id="pequenio" name="tamano" value="pequenio" />
-        <label  for="pequenio">Pequeño</label>
-        <input  v-model=" tamanoLetra" type="radio" id="mediano" name="tamano" value="mediano" />
+        <input v-model="tamanoLetra" type="radio" id="pequenio" name="tamano" value="pequenio" />
+        <label for="pequenio">Pequeño</label>
+        <input v-model="tamanoLetra" type="radio" id="mediano" name="tamano" value="mediano" />
         <label for="mediano">Mediano</label>
-        <input  v-model=" tamanoLetra" type="radio" id="grande" name="tamano" value="grande" />
+        <input v-model="tamanoLetra" type="radio" id="grande" name="tamano" value="grande" />
         <label for="grande">Grande</label> </label><br /><br />
     </form>
 
-    <div :class=" {'opacidad':opacity === true }" 
-     :style="{
+    <div :class="{ opacidad: opacity === true }" :style="{
       fontFamily: tipoLetra,
       color: color,
       backgroundColor: fondo,
       borderRadius: borde + 'px',
-      fontSize: tamanoLetra === 'pequenio' ? '12px' : tamanoLetra === 'mediano' ? '16px' : '20px',
+      fontSize:
+        tamanoLetra === 'pequenio'
+          ? '12px'
+          : tamanoLetra === 'mediano'
+            ? '16px'
+            : '20px',
     }" class="cuadroDinamico">
       <h1 v-if="mostrarTexto">{{ texto }}</h1>
     </div>
   </section>
-
 </template>
 
 <script>
@@ -66,17 +69,15 @@ export default {
     return {
       fondo: "",
       texto: "",
-      color: "",
+      color: "white",
       mostrarTexto: true,
-       tipoLetra: "",
-      fuentes: ['Arial', 'Cursiva', 'Impact', 'Garamond'], // Arreglo para el v-for
+      tipoLetra: "",
+      fuentes: ["Arial", "Cursiva", "Impact", "Garamond"], // Arreglo para el v-for
       borde: 0,
-      opacity:"",
-      tamanoLetra:"",
-
-    }
-  }
-
+      opacity: "",
+      tamanoLetra: "",
+    };
+  },
 };
 </script>
 
@@ -86,27 +87,34 @@ export default {
   flex-direction: column;
   padding: 20px;
   width: 25%;
-  background-color: cadetblue;
+  background-color: gray;
 }
 
 .flexBox {
   display: flex;
-  justify-content: space-around
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 100px;
+  background-color: black;
 }
 
 .cuadroDinamico {
   width: 400px;
   height: 400px;
-  border: solid;
+  border: solid white;
   text-align: center;
   line-height: 350px;
-
 }
 
 .fondo {
   background-color: blue;
 }
-.opacidad{
+
+.opacidad {
   opacity: 0.3;
+}
+
+body {
+  background-color: black;
 }
 </style>
