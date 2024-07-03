@@ -15,7 +15,7 @@
       <input type="range" id="input4" name="input4" v-model="borde" min="0" max="200" /><br /><br />
 
       <label for="input5">Contenido actual</label>
-      <input v-model="texto" type="text" id="input5" name="input5" maxlength="35" /><br /><br />
+      <input v-model="texto" type="text" id="input5" name="input5"  /><br /><br />
 
       <label>
         Tipografía:
@@ -103,7 +103,10 @@ export default {
   height: 400px;
   border: solid white;
   text-align: center;
-  line-height: 350px;
+  overflow: hidden; /* Oculta el contenido desbordado */
+  word-wrap: break-word; /* Permite que las palabras largas se rompan */
+  white-space: pre-wrap; /* Mantiene los espacios en blanco y hace que el texto se ajuste al cuadro */
+
 }
 
 .fondo {
