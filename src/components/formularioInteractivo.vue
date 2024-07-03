@@ -103,7 +103,7 @@ export default {
   height: 400px;
   border: solid white;
   text-align: center;
-  overflow: hidden; /* Oculta el contenido desbordado */
+  overflow: auto; /* Oculta el contenido desbordado */
   word-wrap: break-word; /* Permite que las palabras largas se rompan */
   white-space: pre-wrap; /* Mantiene los espacios en blanco y hace que el texto se ajuste al cuadro */
 
